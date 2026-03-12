@@ -5009,14 +5009,12 @@ a.text-theme:hover,
 .header-btns.style2 a {
   color: var(--white-color);
 }
-.header-btns .sideCartToggler,
-.header-btns .headerCartLink {
+.header-btns .sideCartToggler {
   background-color: var(--theme-color);
   color: var(--white-color);
   border-color: var(--theme-color);
 }
-.header-btns .sideCartToggler span,
-.header-btns .headerCartLink span {
+.header-btns .sideCartToggler span {
   position: absolute;
   top: -5px;
   right: 0;
@@ -5034,13 +5032,11 @@ a.text-theme:hover,
   color: var(--white-color);
   transition: all 0.3s ease-in-out;
 }
-.header-btns .sideCartToggler:hover span,
-.header-btns .headerCartLink:hover span {
+.header-btns .sideCartToggler:hover span {
   background-color: var(--theme-color2);
   color: var(--title-color);
 }
-.header-btns .sideCartToggler.style2 span,
-.header-btns .headerCartLink.style2 span {
+.header-btns .sideCartToggler.style2 span {
   background-color: var(--theme-color2);
 }
 

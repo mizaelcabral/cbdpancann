@@ -7787,12 +7787,17 @@ blockquote.vs-quote .quote-author {
   animation-name: ripple2;
   animation-duration: 3s;
 }
+.img-box7 .play-btn img,
 .img-box7 .play-btn i {
   border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
   --icon-size: 80px;
   --icon-font-size: 18px;
   background-color: var(--white-color);
   color: var(--title-color);
+  display: block;
 }
 .img-box7 .img2,
 .img-box7 .img3,

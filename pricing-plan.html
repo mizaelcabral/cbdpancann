@@ -356,30 +356,49 @@
     </div>
   </section>
   <!-- Pricing Plan Area End -->
-  <section class="space-bottom">
+  <!-- Refer Friend Area -->
+  <section class="space-extra-bottom">
     <div class="container">
-      <div class="position-relative">
-        <div class="review-wrap">
-          <div class="row g-md-3 align-items-center justify-content-center justify-content-lg-between">
-            <div class="col-lg-8">
-              <div class="review-content">
-                <div class="review-content__left">
-                  <div class="review-logo">
-                    <img src="assets/img/logos/l-1-2.png" alt="logo">
-                  </div>
-                </div>
-                <div class="review-content__right">
-                  <h2 class="review-title h3">No.1 CBD Specialist</h2>
-                  <p class="review-text">CBD oils, joint &amp; muscle rubs, skin care &amp; cosmetics, edibles, drinks,
-                    e-liquids,concentrates &amp;
-                    isolates, vapes &amp; more…</p>
-                </div>
-              </div>
+      <div class="row align-items-center justify-content-between">
+        <div class="col-lg-auto mb-30">
+          <div class="img-box6">
+            <div class="img-badge">
+              <span class="badge-title">Refer a Friend</span>
+              <span class="badge-percentage">20%</span>
+              <span class="badge-text">Discount</span>
             </div>
-            <div class="col-auto text-center text-lg-end">
-              <span class="review-subtitle">Rated 4.9 / 5</span>
-        <div class="row gy-4">
-          <div class="col-lg-4">
+            <img class="img1" src="assets/img/others/refer-3-1.jpg" alt="refer-3-1">
+          </div>
+        </div>
+        <div class="col-lg-6 mb-30">
+          <div class="title-area">
+            <h2 class="sec-title">Refer Your Friends, Get 30% Discount!</h2>
+            <p class="sec-text ref-text">Give your friends a 30% discount. When your friends buy from your
+              invite link, <a href="#">you get a 30% discount!</a></p>
+          </div>
+          <form action="api/subscribe.php" method="POST" class="ref-form ajax-newsletter">
+            <input type="hidden" name="form_type" value="referral">
+            <h3 class="form-title">Referral info and updates will be sent to your email</h3>
+            <div class="form-group mb-20">
+              <input type="email" name="email" class="form-control" placeholder="youremail@example.com" required>
+            </div>
+            <div class="d-inline-flex">
+              <button type="submit" class="vs-btn style2">Get Invite Link</button>
+            </div>
+            <p class="form-messages mb-0 mt-3"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Refer Friend Area End -->
+  <!-- Footer Area Start -->
+  <footer class="footer-layout3">
+    <div class="widget-area style3" data-bg-src="assets/img/bg/footer-bg-3-1.png">
+      <img src="assets/img/leafs/footer-3-1.png" alt="footer leafs" class="footer-overlay">
+      <div class="container">
+        <div class="row gy-5">
+          <div class="col-lg-4 col-md-6">
             <div class="widget footer-widget">
               <div class="vs-widget-about">
                 <div class="footer-logo">
@@ -388,7 +407,7 @@
                 <p class="footer-text style3">Aliquet eget sit amet tellus cras adipiscing
                   enim eu turpis. Hac habitasse platea dictu
                   mst quisque.</p>
-                <div class="footer-social style3">
+                <div class="footer-social style3 justify-content-start">
                   <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
                   <a href="https://x.com"><i class="fab fa-twitter"></i></a>
                   <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
@@ -396,14 +415,14 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-4 col-md-6">
             <div class="widget footer-widget">
               <h3 class="widget_title style3">Contact Information</h3>
               <div class="footer-info style3">
                 <div class="footer-info__icon">
                   <i>
-                                    <img src="assets/img/icons/footer-info-1-1.png" alt="footer info">
-                                </i>
+                    <img src="assets/img/icons/footer-info-1-1.png" alt="footer info">
+                  </i>
                 </div>
                 <div class="media-body">
                   <div class="footer-info__link">
@@ -414,8 +433,8 @@
               <div class="footer-info style3">
                 <div class="footer-info__icon">
                   <i>
-                                    <img src="assets/img/icons/footer-info-1-2.png" alt="footer info">
-                                </i>
+                    <img src="assets/img/icons/footer-info-1-2.png" alt="footer info">
+                  </i>
                 </div>
                 <div class="media-body">
                   <span class="footer-info__label">Phone No:</span>
@@ -427,8 +446,8 @@
               <div class="footer-info style3">
                 <div class="footer-info__icon">
                   <i>
-                                    <img src="assets/img/icons/footer-info-1-3.png" alt="footer info">
-                                </i>
+                    <img src="assets/img/icons/footer-info-1-3.png" alt="footer info">
+                  </i>
                 </div>
                 <div class="media-body">
                   <span class="footer-info__label">Email Address:</span>
@@ -496,8 +515,9 @@
       <div class="container">
         <div class="row g-3 justify-content-center justify-content-xxl-between align-items-center">
           <div class="col-lg-auto">
-            <p class="copyright-text text-center text-lg-start">Copyright © <a href="index.html">Cannabo
-                2024</a> . All
+            <p class="copyright-text style3 text-center text-lg-start">Copyright © <a href="index.html">Cannabo 2024</a>
+              .
+              All
               rights reserved. <a href="https://themeforest.net/user/vecuro_themes">Vecuro</a></p>
           </div>
           <div class="col-lg-auto">
@@ -518,11 +538,9 @@
         </div>
       </div>
     </div>
-  </section>
+  </footer>
   <!-- Footer Area End -->
-  <!--********************************
-			Code End  Here 
-	******************************** -->
+
   <!--==============================
         All Js File
     ============================== -->
@@ -548,4 +566,4 @@
   <script src="assets/js/main.js"></script>
 </body>
 
-</html>
+</html>

@@ -747,6 +747,7 @@
               invite link, <a href="#">you get a 30% discount!</a></p>
           </div>
           <form action="api/subscribe.php" method="POST" class="ref-form ajax-newsletter">
+            <input type="hidden" name="form_type" value="referral">
             <h3 class="form-title">Referral info and updates will be sent to your email</h3>
             <div class="form-group mb-20">
               <input type="email" name="email" class="form-control" placeholder="youremail@example.com" required>
@@ -966,6 +967,7 @@
   <div class="space-top">
     <div class="container">
       <form class="newsletter-form3 ajax-newsletter" action="api/subscribe.php" method="POST" data-bg-src="assets/img/bg/newsletter-form-bg-3-1.png">
+        <input type="hidden" name="form_type" value="newsletter">
         <div class="row gy-4 align-items-center justify-content-between">
           <div class="col-lg-6">
             <h2 class="sec-title">Subscribe Newsletter For 35% OFF Your First Order</h2>

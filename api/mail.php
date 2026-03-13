@@ -18,30 +18,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Set the recipient email address.
-    // FIXME: Update this to your desired email address.
-    $recipient = "info@vecuro.com";
+    $recipient = "contact@pancanncbd.com";
 
     // Set the email subject.
-    $subject = "New contact from your website"; // You can customize this if needed
+    $subject = "New contact from your website";
 
-    // Build the email content.
-    $email_content = "Name: $name\n";
-    $email_content .= "Email: $email\n";
-    $email_content .= "Phone: $phone\n\n";
-    $email_content .= "Message:\n$message\n";
+    // Build the email content (HTML).
+    $html_content = "<strong>Name:</strong> $name<br>";
+    $html_content .= "<strong>Email:</strong> $email<br>";
+    $html_content .= "<strong>Phone:</strong> $phone<br><br>";
+    $html_content .= "<strong>Message:</strong><br>".nl2br($message);
 
-    // Build the email headers.
-    $email_headers = "From: $name <$email>";
+    // Resend API Integration
+    $api_key = 're_NH2JPZ4d_5f5BrJ4SmxqqRbhY6HnooPh5';
+    
+    $ch = curl_init();
 
-    // Send the email.
-    if (mail($recipient, $subject, $email_content, $email_headers)) {
+    curl_setopt($ch, CURLOPT_URL, 'https://api.resend.com/emails');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([
+        'from' => 'Website Contact <onboarding@resend.dev>', // Use verified domain once verified
+        'to' => [$recipient],
+        'subject' => $subject,
+        'html' => $html_content,
+        'reply_to' => $email
+    ]));
+
+    $headers = [
+        'Authorization: Bearer ' . $api_key,
+        'Content-Type: application/json'
+    ];
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+    $result = curl_exec($ch);
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    if ($http_code == 200 || $http_code == 201) {
         // Set a 200 (okay) response code.
         http_response_code(200);
         echo "Thank You! Your message has been sent.";
     } else {
         // Set a 500 (internal server error) response code.
         http_response_code(500);
-        echo "Oops! Something went wrong and we couldn't send your message.";
+        echo "Oops! Something went wrong and we couldn't send your message. Error: " . $result;
     }
 } else {
     // Not a POST request, set a 403 (forbidden) response code.

@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([
-        'from' => 'Newsletter <onboarding@resend.dev>', // Use verified domain once verified
+        'from' => 'Newsletter <contact@pancanncbd.com>', // Use verified domain address
         'to' => [$recipient],
         'subject' => $subject,
         'html' => $html_content,

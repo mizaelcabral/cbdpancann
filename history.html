@@ -469,14 +469,14 @@
   <!-- Features Area End -->
   <div class="space-top space">
     <div class="container">
-      <form class="newsletter-form3" action="mail.php" data-bg-src="assets/img/bg/newsletter-form-bg-3-1.png">
+      <form class="newsletter-form3 ajax-newsletter" action="subscribe.php" method="POST" data-bg-src="assets/img/bg/newsletter-form-bg-3-1.png">
         <div class="row gy-4 align-items-center justify-content-between">
           <div class="col-lg-6">
             <h2 class="sec-title">Subscribe Newsletter For 35% OFF Your First Order</h2>
             <p class="sec-text">Receive updates on new products, special promotions.</p>
             <div class="form-group mb-0">
-              <input type="email" class="form-control" placeholder="Enter your email address...">
-              <button class="vs-btn style4">Subscribe Now</button>
+              <input type="email" name="email" class="form-control" placeholder="Enter your email address..." required>
+              <button type="submit" class="vs-btn style4">Subscribe Now</button>
             </div>
           </div>
           <div class="col-lg-auto">

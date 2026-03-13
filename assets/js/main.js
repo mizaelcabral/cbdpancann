@@ -497,6 +497,48 @@
     });
   }
   ajaxContactForm(".ajax-contact");
+  
+  /*----------- 09a. Ajax Newsletter Form ----------*/
+  function ajaxNewsletterForm(selectForm) {
+    $(document).on("submit", selectForm, function (e) {
+      e.preventDefault();
+      var form = $(this);
+      var formData = form.serialize();
+      var formMessages = form.find(".form-messages");
+      var invalidCls = "is-invalid";
+      var emailField = form.find('[name="email"]');
+      var emailVal = emailField.val();
+
+      if (!emailVal || !emailVal.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+        emailField.addClass(invalidCls);
+        return false;
+      } else {
+        emailField.removeClass(invalidCls);
+      }
+
+      jQuery.ajax({
+        url: form.attr("action"),
+        data: formData,
+        type: "POST",
+      })
+      .done(function (response) {
+        formMessages.removeClass("error").addClass("success").text(response);
+        emailField.val("");
+      })
+      .fail(function (data) {
+        formMessages.removeClass("success").addClass("error");
+        // If status is 200 but it failed, or if it hit a static server
+        if (data.status === 200 || (data.status === 405 && form.attr("action").endsWith(".php"))) {
+          formMessages.html("Nota: Esta funcionalidade exige um servidor PHP. O e-mail foi capturado mas não pôde ser enviado localmente.");
+        } else if (data.responseText !== "") {
+          formMessages.html(data.responseText);
+        } else {
+          formMessages.html("Ops! Ocorreu um erro. Tente novamente.");
+        }
+      });
+    });
+  }
+  ajaxNewsletterForm(".ajax-newsletter");
 
   /*----------- 10. Magnific Popup ----------*/
   /* magnificPopup img view */

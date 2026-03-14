@@ -1017,4 +1017,46 @@
   );
 
   // End
+  /*---------- 27. Age Verification Popup ----------*/
+  function ageVerification() {
+    if (!sessionStorage.getItem("age_verified")) {
+      var popupHTML =
+        '<div id="age-verify-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); z-index: 1000000; display: flex; align-items: center; justify-content: center; font-family: \'Jost\', sans-serif;">' +
+        '<div style="background: #0f1410; border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; padding: 50px 40px; text-align: center; max-width: 550px; width: 90%; color: #fff; box-shadow: 0 30px 100px rgba(0,0,0,1); animation: ageFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);">' +
+        '<img src="assets/img/logo-white.png" alt="Pancann Logo" style="max-width: 240px; margin-bottom: 40px; filter: drop-shadow(0 0 10px rgba(71, 179, 45, 0.3));">' +
+        '<h2 style="font-size: 36px; font-weight: 700; margin-bottom: 20px; color: #fff; letter-spacing: -0.5px;">Age Verification</h2>' +
+        '<p style="font-size: 18px; color: #a1a1a1; margin-bottom: 40px; line-height: 1.7; font-family: \'Epilogue\', sans-serif;">This website contains products that are only suitable for those 21 years or older. Are you of legal age to enter?</p>' +
+        '<div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">' +
+        '<button id="age-verify-yes" style="background: #47b32d; color: #fff; border: none; padding: 18px 50px; border-radius: 100px; font-size: 18px; font-weight: 700; cursor: pointer; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); min-width: 200px; box-shadow: 0 10px 20px rgba(71, 179, 45, 0.2);">Yes, I am over 21</button>' +
+        '<button id="age-verify-no" style="background: rgba(255,255,255,0.05); color: #fff; border: 2px solid rgba(255,255,255,0.1); padding: 18px 50px; border-radius: 100px; font-size: 18px; font-weight: 700; cursor: pointer; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); min-width: 200px;">No, I am under 21</button>' +
+        "</div>" +
+        '<p style="margin-top: 40px; font-size: 13px; color: #555; text-transform: uppercase; letter-spacing: 1px;">Pancann CBD - Premium Quality</p>' +
+        "</div>" +
+        "<style>" +
+        "@keyframes ageFadeIn { from { opacity: 0; transform: scale(0.95) translateY(30px); } to { opacity: 1; transform: scale(1) translateY(0); } }" +
+        "#age-verify-yes:hover { background: #52ce34 !important; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(71, 179, 45, 0.4) !important; }" +
+        "#age-verify-yes:active { transform: translateY(-1px); }" +
+        "#age-verify-no:hover { background: rgba(255,255,255,0.1) !important; border-color: #fff !important; transform: translateY(-3px); }" +
+        "#age-verify-no:active { transform: translateY(-1px); }" +
+        "</style>" +
+        "</div>";
+
+      $("body").append(popupHTML);
+      $("body").css("overflow", "hidden");
+
+      $("#age-verify-yes").on("click", function () {
+        sessionStorage.setItem("age_verified", "true");
+        $("#age-verify-overlay").fadeOut(400, function () {
+          $(this).remove();
+          $("body").css("overflow", "auto");
+        });
+      });
+
+      $("#age-verify-no").on("click", function () {
+        window.location.href = "https://www.google.com";
+      });
+    }
+  }
+  ageVerification();
+
 })(jQuery);

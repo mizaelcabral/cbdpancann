@@ -1059,4 +1059,70 @@
   }
   ageVerification();
 
+  /*---------- 28. Ajax Review Form ----------*/
+  function ajaxReviewForm(selectForm) {
+    var form = $(selectForm);
+    var invalidCls = "is-invalid";
+    var formMessages = form.find(".form-messages");
+
+    // Star Rating Logic
+    form.find(".rating-select .stars a").on("click", function(e) {
+      e.preventDefault();
+      var rating = $(this).text();
+      form.find('input[name="rating"]').val(rating);
+      
+      // Visual feedback
+      $(this).addClass("active").prevAll().addClass("active");
+      $(this).nextAll().removeClass("active");
+    });
+
+    form.on("submit", function(e) {
+      e.preventDefault();
+      var formData = form.serialize();
+      
+      // Basic validation
+      var valid = true;
+      var $email = form.find('[name="email"]');
+      
+      form.find('[name="name"], [name="email"], [name="message"]').each(function() {
+        if (!$(this).val()) {
+          $(this).addClass(invalidCls);
+          valid = false;
+        } else {
+          $(this).removeClass(invalidCls);
+        }
+      });
+
+      if ($email.val() && !$email.val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+        $email.addClass(invalidCls);
+        valid = false;
+      }
+
+      if (!valid) return false;
+
+      jQuery.ajax({
+        url: form.attr("action"),
+        data: formData,
+        type: "POST",
+      })
+      .done(function(response) {
+        formMessages.removeClass("error").addClass("success").text(response);
+        form.find('input:not([type="hidden"]):not([type="submit"]), textarea').val("");
+        form.find(".rating-select .stars a").removeClass("active");
+        form.find('input[name="rating"]').val("0");
+      })
+      .fail(function(data) {
+        formMessages.removeClass("success").addClass("error");
+        if (data.responseText !== "") {
+          formMessages.html(data.responseText);
+        } else {
+          formMessages.html("Oops! An error occurred. Please try again.");
+        }
+      });
+    });
+  }
+  if ($(".ajax-review").length > 0) {
+    ajaxReviewForm(".ajax-review");
+  }
+
 })(jQuery);

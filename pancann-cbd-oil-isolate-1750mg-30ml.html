@@ -51,6 +51,26 @@
   <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
   <!-- Theme Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .rating-select .stars a.active {
+      color: #47b32d;
+    }
+    .form-messages.success {
+      color: #47b32d;
+      margin-top: 15px;
+      font-weight: 600;
+      display: block;
+    }
+    .form-messages.error {
+      color: #ff3e3e;
+      margin-top: 15px;
+      font-weight: 600;
+      display: block;
+    }
+    .is-invalid {
+      border-color: #ff3e3e !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -395,16 +415,16 @@
         <h3 class="blog-inner-title">Additional information</h3>
         <div class="product-information">
           <div class="product-information__item">
-            <span class="product-information__name">Weight</span>
-            <span>0.5 kg</span>
+            <span class="product-information__name">Total CBD Content</span>
+            <span>1750mg Pure Isolate</span>
           </div>
           <div class="product-information__item">
-            <span class="product-information__name">Dimensions</span>
-            <span>24 × 1 × 2 cm</span>
+            <span class="product-information__name">Lab Certification</span>
+            <span>COA Tested (View PDF)</span>
           </div>
           <div class="product-information__item">
-            <span class="product-information__name">Weight</span>
-            <span>0.5kg, 1.5kg, 1kg, 2.5kg, 2kg, 3kg</span>
+            <span class="product-information__name">Extraction Method</span>
+            <span>Premium CO2 Extraction</span>
           </div>
         </div>
       </div>
@@ -426,10 +446,8 @@
             <img src="assets/img/blog/blog-d-1-9.jpg" alt="Comment Author">
           </div>
           <div class="comment-content">
-            <h4 class="name h4">David Warnner <span class="commented-on">January 7, 2024</span></h4>
-            <p class="text">Nisl quam nestibulum ac quam nec odio elementu aucan ligula. Orci varius natoque pena tibus et
-              ma urient monte nascete ridiculus
-              nestibulum ac quam necy sque um ac quam nec odio rbine</p>
+            <h4 class="name h4">David Warnner <span class="commented-on">January 7, 2025</span></h4>
+            <p class="text">I've tried many different CBD oils, but this 1750mg isolate is by far the most effective for my chronic pain. The purity is unmatched, and I love that it is completely THC-free. Amazing!</p>
           </div>
         </div>
         <div class="vs-post-comment">
@@ -448,15 +466,13 @@
             <img src="assets/img/blog/blog-d-1-10.jpg" alt="Comment Author">
           </div>
           <div class="comment-content">
-            <h4 class="name h4">Thomas Walkar <span class="commented-on">March 7, 2024</span></h4>
-            <p class="text">Nisl quam nestibulum ac quam nec odio elementu aucan ligula. Orci varius natoque pena tibus et
-              ma urient monte nascete ridiculus
-              nestibulum ac quam necy sque um ac quam nec odio rbine</p>
+            <h4 class="name h4">Thomas Walkar <span class="commented-on">March 7, 2025</span></h4>
+            <p class="text">This Pancann oil has completely changed my daily routine. I feel much more focused at work and I'm finally sleeping through the night. A truly premium product that delivers on its promise.</p>
           </div>
         </div>
       </div>
       <div class="vs-comment-form reviews-form">
-        <div id="respond">
+        <form id="respond" class="ajax-review" action="api/review.php" method="POST">
           <div class="form-title">
             <div class="form-left">
               <h3 class="blog-inner-title">Add Reviews</h3>
@@ -473,23 +489,28 @@
                 <a class="star-5" href="#">5</a>
               </span>
               </p>
+              <input type="hidden" name="rating" value="0">
+              <input type="hidden" name="product" value="Pancann Isolate CBD Oil 1750mg">
             </div>
           </div>
           <div class="row gx-20">
             <div class="col-md-6 form-group">
-              <input type="text" class="form-control" placeholder="Full Name">
+              <input type="text" name="name" class="form-control" placeholder="Full Name" required>
             </div>
             <div class="col-md-6 form-group">
-              <input type="email" class="form-control" placeholder="Email Address">
+              <input type="email" name="email" class="form-control" placeholder="Email Address" required>
             </div>
             <div class="col-12 form-group">
-              <textarea class="form-control" placeholder="Your Review"></textarea>
+              <textarea name="message" class="form-control" placeholder="Your Review" required></textarea>
             </div>
             <div class="col-12 form-group mb-0">
-              <button class="vs-btn style2">Post Review</button>
+              <button type="submit" class="vs-btn style2">Post Review</button>
+            </div>
+            <div class="col-12">
+              <div class="form-messages"></div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </section>

@@ -931,8 +931,8 @@
             <div class="widget widget_nav_menu footer-widget style3">
               <div class="menu-all-pages-container">
                 <ul class="menu justify-content-center justify-content-lg-end ">
-                  <li><a href="contact.html"><span>Terms and Conditions</span></a></li>
-                  <li><a href="contact.html"><span>Privacy Policy</span></a></li>
+                  <li><a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms and Conditions</a></li>
+                  <li><a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a></li>
                 </ul>
               </div>
             </div>
@@ -968,9 +968,9 @@
   <script src="assets/js/jquery-ui.min.js"></script>
   <!-- Main Js File -->
   <script src="assets/js/main.js"></script>
-  <!-- Footer Modals -->
-  <div class="modal fade" id="processModal" tabindex="-1" aria-labelledby="processModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <!-- Footer Modals -->
+  <div class="modal fade glass-modal" id="processModal" tabindex="-1" aria-labelledby="processModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="processModalLabel">Our Pure Process</h5>
@@ -983,8 +983,8 @@
     </div>
   </div>
 
-  <div class="modal fade" id="paymentsModal" tabindex="-1" aria-labelledby="paymentsModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+  <div class="modal fade glass-modal" id="paymentsModal" tabindex="-1" aria-labelledby="paymentsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="paymentsModalLabel">Secure Payments</h5>
@@ -997,8 +997,8 @@
     </div>
   </div>
 
-  <div class="modal fade" id="offersModal" tabindex="-1" aria-labelledby="offersModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+  <div class="modal fade glass-modal" id="offersModal" tabindex="-1" aria-labelledby="offersModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="offersModalLabel">Exclusive Offers & Rewards</h5>
@@ -1011,8 +1011,8 @@
     </div>
   </div>
 
-  <div class="modal fade" id="shippingModal" tabindex="-1" aria-labelledby="shippingModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+  <div class="modal fade glass-modal" id="shippingModal" tabindex="-1" aria-labelledby="shippingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="shippingModalLabel">Global Shipping & Delivery</h5>
@@ -1025,8 +1025,8 @@
     </div>
   </div>
 
-  <div class="modal fade" id="regulationsModal" tabindex="-1" aria-labelledby="regulationsModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+  <div class="modal fade glass-modal" id="regulationsModal" tabindex="-1" aria-labelledby="regulationsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="regulationsModalLabel">Compliance & Standards</h5>
@@ -1038,8 +1038,49 @@
       </div>
     </div>
   </div>
+
+  <div class="modal fade glass-modal" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="termsModalLabel">Terms and Conditions</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Welcome to PANCANN. By using our website and purchasing our products, you agree to comply with the following terms:</p>
+          <ul>
+            <li><strong>Age Verification:</strong> You must be 21 years of age or older to purchase our products.</li>
+            <li><strong>Product Use:</strong> Our products contain less than 0.3% THC and are compliant with the 2018 Farm Bill. They are not intended to diagnose, treat, cure, or prevent any disease.</li>
+            <li><strong>Shipping:</strong> We ship globally. Customers are responsible for understanding their local regulations (e.g., Anvisa in Brazil).</li>
+            <li><strong>Liability:</strong> PANCANN is not liable for misuse of products or customs delays.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade glass-modal" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Your privacy is paramount to PANCANN.</p>
+          <ul>
+            <li><strong>Data Collection:</strong> We collect only necessary information for order processing and communication (name, email, address).</li>
+            <li><strong>Protection:</strong> We use advanced encryption to secure your personal and financial data.</li>
+            <li><strong>Third Parties:</strong> We do not sell your data. We only share info with trusted logistics partners for delivery.</li>
+            <li><strong>Cookies:</strong> We use cookies to improve your shopping experience and site performance.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
+
 
 

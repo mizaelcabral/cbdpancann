@@ -13305,3 +13305,35 @@ blockquote.vs-quote .quote-author {
 .vs-mobile-menu ul li a.active {
     color: var(--theme-color, #77a02c) !important;
 }
+
+/* Glassmorphism Modals */
+.glass-modal .modal-content {
+    background: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    border-radius: 24px !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+.glass-modal .modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    background: transparent !important;
+    padding: 25px 30px !important;
+}
+
+.glass-modal .modal-body {
+    padding: 30px !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    color: #333 !important;
+}
+
+.glass-modal .modal-title {
+    font-weight: 700 !important;
+    color: #1a1a1a !important;
+}
+
+.glass-modal .btn-close {
+    filter: brightness(0.5);
+}

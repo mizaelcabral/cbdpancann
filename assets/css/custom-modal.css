@@ -1,0 +1,139 @@
+/* Glassmorphism Modal Styles */
+.pancann-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pancann-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.pancann-modal-container {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 700px;
+    width: 90%;
+    position: relative;
+    transform: translateY(30px) scale(0.95);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    color: #1a1a1a;
+}
+
+.dark-theme .pancann-modal-container {
+    background: rgba(23, 43, 23, 0.95); /* Deep cannabis green */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.pancann-modal-overlay.active .pancann-modal-container {
+    transform: translateY(0) scale(1);
+}
+
+.pancann-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    font-size: 20px;
+    color: inherit;
+}
+
+.pancann-modal-close:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: rotate(90deg);
+}
+
+.pancann-modal-header {
+    margin-bottom: 25px;
+}
+
+.pancann-modal-header h2 {
+    font-size: 32px;
+    margin: 0;
+    font-weight: 700;
+    background: linear-gradient(135deg, #1d3a1d 0%, #4a7c44 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dark-theme .pancann-modal-header h2 {
+    background: linear-gradient(135deg, #ffffff 0%, #a5d6a7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.pancann-modal-body {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #ffffff !important;
+}
+
+.pancann-modal-body p,
+.pancann-modal-body div,
+.pancann-modal-body strong,
+.pancann-modal-body span {
+    color: #ffffff !important;
+}
+
+.pancann-modal-body p {
+    margin-bottom: 20px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pancann-modal-body {
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 576px) {
+    .pancann-modal-container {
+        padding: 30px 20px;
+    }
+    .pancann-modal-header h2 {
+        font-size: 24px;
+    }
+    .pancann-modal-body {
+        font-size: 16px;
+    }
+}

@@ -81,6 +81,7 @@
   <meta name="twitter:title" content="PANCANN - Premium CBD Oil & Cannabis Products">
   <meta name="twitter:description" content="Discover our premium selection of CBD oils, edibles, and topicals. Safe and lab-tested for your wellness.">
   <meta name="twitter:image" content="assets/img/others/imagem-compartilhamento.png">
+	<link rel="stylesheet" href="assets/css/custom-modal.css">
 </head>
 
 <body>
@@ -395,7 +396,7 @@
                   <h2 class="review-title h3">No.1 CBD Specialist</h2>
                   <p class="review-text">CBD oils, joint & muscle rubs, skin care & cosmetics, edibles, drinks,
                     e-liquids,concentrates &
-                    isolates, vapes & more…</p>
+                    isolates, vapes & moreï¿½</p>
                 </div>
               </div>
             </div>
@@ -607,10 +608,10 @@
                   <li><a href="#" data-bs-toggle="modal" data-bs-target="#offersModal">Special Offers</a></li>
                   <li><a href="#" data-bs-toggle="modal" data-bs-target="#shippingModal">Shipping</a></li>
                   <li><a href="#" data-bs-toggle="modal" data-bs-target="#regulationsModal">Regulations</a></li>
-                  <li><a href="index-2.html">Product Returns</a></li>
-                  <li><a href="contact.html">About Us</a></li>
-                  <li><a href="project.html">FAQ</a></li>
-                  <li><a href="services.html">Our Team</a></li>
+                  <li><a href="#" class="footer-popup-link" data-content-id="product-returns">Product Returns</a></li>
+                  <li><a href="index.html#about_us">About Us</a></li>
+                  <li><a href="faq.html">FAQ</a></li>
+                  <li><a href="#" class="footer-popup-link" data-content-id="our-team">Our Team</a></li>
                 </ul>
               </div>
             </div>
@@ -654,7 +655,7 @@
       <div class="container">
         <div class="row g-3 justify-content-center justify-content-xxl-between align-items-center">
           <div class="col-lg-auto">
-            <p class="copyright-text text-center text-lg-start">Copyright © <a href="index.html">Pancann
+            <p class="copyright-text text-center text-lg-start">Copyright ï¿½ <a href="index.html">Pancann
                 2026</a> . All
               rights reserved. <a href="https://www.brandibuilder.com" target="_blank">Brandi</a></p>
           </div>
@@ -814,6 +815,20 @@
       </div>
     </div>
   </div>
+
+  <!-- Custom Footer Popups -->
+  <div class="pancann-modal-overlay">
+    <div class="pancann-modal-container">
+      <button class="pancann-modal-close"><i class="fal fa-times"></i></button>
+      <div class="pancann-modal-header">
+        <h2 id="pancann-modal-title">TÃ­tulo do Modal</h2>
+      </div>
+      <div class="pancann-modal-body" id="pancann-modal-body">
+        <p>ConteÃºdo do modal...</p>
+      </div>
+    </div>
+  </div>
+  <script src="assets/js/footer-popups.js"></script>
 </body>
 
 </html>

@@ -429,15 +429,15 @@
         <div class="product-information">
           <div class="product-information__item">
             <span class="product-information__name">Total THC Content</span>
-            <span>25mg per gummy</span>
+            <span id="product-thc">< 0.3% THC</span>
           </div>
           <div class="product-information__item">
             <span class="product-information__name">Lab Certification</span>
-            <span>COA Tested (<a href="assets/coa/COA%20GUMMIE%20-%20CALM%20NATURE.pdf" target="_blank">View PDF</a>)</span>
+            <span>COA Tested (<a href="https://drive.google.com/file/d/14MgrAjk2GWDax5FqsCox210JKIGUY20W/view" target="_blank" id="product-coa">View PDF</a>)</span>
           </div>
           <div class="product-information__item">
             <span class="product-information__name">Quantity</span>
-            <span>20PCS per jar</span>
+            <span id="product-quantity">7250mg</span>
           </div>
         </div>
       </div>
@@ -1010,16 +1010,19 @@
         "10g": {
           price: "$100.00",
           title: "Hemp Oil Full Spectrum Pancann 10g 7250mg",
+          quantity: "7250mg",
           description: "Find your inner peace with PANCANN's Hemp Oil Full Spectrum Pancann 10g 7250mg. This premium oil is specifically formulated to help you disconnect from daily stress and embrace a state of deep tranquility. Infused with 7250mg of high-quality full-spectrum hemp extract, our oil provides a reliable and consistent experience for those seeking natural serenity. Crafted with the finest ingredients and balanced for a smooth effect, it is the perfect addition to your daily routine or any moment when you need to slow down and breathe. Experience the soothing power of nature, refined by PANCANN's commitment to purity and excellence."
         },
         "20g": {
           price: "$197.00",
           title: "Hemp Oil Full Spectrum Pancann 20g 7250mg",
+          quantity: "7250mg",
           description: "Double your wellness with PANCANN's Hemp Oil Full Spectrum Pancann 20g 7250mg. This larger 20g presentation offers the same premium formulation designed for deep relaxation and stress relief. Infused with 7250mg of high-quality full-spectrum hemp extract, it provides lasting tranquility for your wellness journey. Perfect for those who have made hemp oil a consistent part of their health regimen. Experience the soothing power of nature, refined by PANCANN's commitment to purity and excellence."
         },
         "50g": {
           price: "$490.00",
           title: "Hemp Oil Full Spectrum Pancann 50g 7250mg",
+          quantity: "7250mg",
           description: "The ultimate wellness choice: PANCANN's Hemp Oil Full Spectrum Pancann 50g 7250mg. This value-sized 50g presentation ensures you never run out of your natural tranquility. Infused with 7250mg of high-quality full-spectrum hemp extract, it is expertly formulated to support long-term relaxation and balance. Ideal for dedicated users seeking the best value without compromising on pharmaceutical-grade purity. Experience the soothing power of nature, refined by PANCANN's commitment to purity and excellence."
         }
       };
@@ -1029,6 +1032,7 @@
       const breadcrumbTitleEl = document.getElementById('breadcrumb-title');
       const breadcrumbItemEl = document.getElementById('breadcrumb-item');
       const descEl = document.getElementById('product-description');
+      const quantityEl = document.getElementById('product-quantity');
       const thumbs = document.querySelectorAll('.variant-thumb');
 
       thumbs.forEach(thumb => {
@@ -1042,6 +1046,7 @@
             if (breadcrumbTitleEl) breadcrumbTitleEl.textContent = data.title;
             if (breadcrumbItemEl) breadcrumbItemEl.textContent = data.title;
             descEl.textContent = data.description;
+            if (quantityEl) quantityEl.textContent = data.quantity;
           }
         });
       });

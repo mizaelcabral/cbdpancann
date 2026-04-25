@@ -1,17 +1,18 @@
 {
   "functions": {
     "api/*.php": {
-      "runtime": "vercel-php@0.7.2"
+      "runtime": "vercel-php@0.9.0",
+      "excludeFiles": "{assets/**,.opencode/**,*.html,*.md,*.txt}"
     }
   },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/subscribe.php",
-      "dest": "/api/subscribe.php"
+      "source": "/subscribe.php",
+      "destination": "/api/subscribe.php"
     },
     {
-      "src": "/mail.php",
-      "dest": "/api/mail.php"
+      "source": "/mail.php",
+      "destination": "/api/mail.php"
     }
   ]
 }

@@ -286,11 +286,11 @@
       <div class="row justify-content-between align-items-center">
         <div class="col-auto">
           <div class="breadcumb-content">
-            <h1 class="breadcumb-title">CBD Hemp Capsule Purified 120mg</h1>
+            <h1 class="breadcumb-title" id="variant-bread-title">CBD Hemp Capsule Purified 120mg 05g</h1>
             <div class="breadcumb-menu-wrap">
               <ul class="breadcumb-menu">
                 <li><a href="index.html">Home</a></li>
-                <li>CBD Hemp Capsule Purified 120mg</li>
+                <li id="variant-bread-item">CBD Hemp Capsule Purified 120mg 05g</li>
               </ul>
             </div>
           </div>
@@ -306,19 +306,19 @@
         <div class="col-lg-6 mb-30">
           <div class="product-slide-row">
             <div class="product-big-img vs-carousel" data-slide-show="1" data-fade="true" data-asnavfor=".product-thumb-slide">
-              <div class="img"><img src="assets/img/products/hemp-capsule-purified-120mg-large-01.png" alt="Product Image"></div>
-              <div class="img"><img src="assets/img/products/hemp-capsule-purified-120mg-large-02.png" alt="Product Image"></div>
-              <div class="img"><img src="assets/img/products/hemp-capsule-purified-120mg-large-03.png" alt="Product Image"></div>
+              <div class="img"><img src="assets/img/products/hemp-capsule-purified-120mg-05-large.png" alt="Product Image"></div>
+              <div class="img"><img src="assets/img/products/hemp-capsule-purified-120mg-10-large.png" alt="Product Image"></div>
+              <div class="img"><img src="assets/img/products/hemp-capsule-purified-120mg-20-large.png" alt="Product Image"></div>
             </div>
             <div class="product-thumb-slide vs-carousel" data-slide-show="4" data-md-slide-show="4" data-sm-slide-show="3" data-xs-slide-show="3" data-asnavfor=".product-big-img" data-vertical="false" data-sm-vertical="false">
               <div>
-                <div class="thumb"><img src="assets/img/products/hemp-capsule-purified-120mg-large-01.png" alt="Product Image"></div>
+                <div class="thumb variant-thumb" data-variant="05g"><img src="assets/img/products/hemp-capsule-purified-120mg-05-large.png" alt="Product Image"><span class="variant-tag">05g</span></div>
               </div>
               <div>
-                <div class="thumb"><img src="assets/img/products/hemp-capsule-purified-120mg-large-02.png" alt="Product Image"></div>
+                <div class="thumb variant-thumb" data-variant="10g"><img src="assets/img/products/hemp-capsule-purified-120mg-10-large.png" alt="Product Image"><span class="variant-tag">10g</span></div>
               </div>
               <div>
-                <div class="thumb"><img src="assets/img/products/hemp-capsule-purified-120mg-large-03.png" alt="Product Image"></div>
+                <div class="thumb variant-thumb" data-variant="20g"><img src="assets/img/products/hemp-capsule-purified-120mg-20-large.png" alt="Product Image"><span class="variant-tag">20g</span></div>
               </div>
             </div>
           </div>
@@ -332,10 +332,10 @@
               </div>
               <span class="product-rating__total">(1 Review )</span>
             </div>
-            <h2 class="product-title">CBD Hemp Capsule Purified 120mg</h2>
+            <h2 class="product-title" id="variant-product-title">CBD Hemp Capsule Purified 120mg 05g</h2>
 
-            <span class="product-ml">Full-Spectrum / 30PCS</span>
-            <p class="product-price">$39.00</p>
+            <span class="product-ml" id="variant-product-category">Full-Spectrum / 05g</span>
+            <p class="product-price" id="variant-product-price">$105.00</p>
             <div class="actions">
               <div class="quantity">
                 <label for="quantity" class="screen-reader-text">Quantity:</label>
@@ -390,7 +390,7 @@
     <div class="container">
       <div class="product-description mb-50">
         <h3 class="blog-inner-title">Description</h3>
-        <p>Unlock the pure essence of wellness with our CBD Hemp Capsule Purified 120mg. Meticulously processed to provide a high-potency, full-spectrum experience, these capsules are designed for those seeking a convenient and precise way to incorporate premium CBD into their daily routine. Each capsule contains a balanced blend of cannabinoids and hemp-derived compounds to support your overall health and balance. Perfect for on-the-go support, our purified capsules ensure you get the same high quality with every serving. Experience the PANCANN difference with our most potent capsule formula yet.</p>
+        <p id="variant-product-description">Unlock the pure essence of wellness with our CBD Hemp Capsule Purified 120mg. Meticulously processed to provide a high-potency, full-spectrum experience, these 05g capsules are designed for those seeking a convenient and precise way to incorporate premium CBD into their daily routine. Each capsule contains a balanced blend of cannabinoids and hemp-derived compounds to support your overall health and balance. Perfect for on-the-go support, our purified capsules ensure you get the same high quality with every serving. Experience the PANCANN difference with our most potent capsule formula yet.</p>
       </div>
       <div>
         <div class="row gx-50">
@@ -437,7 +437,7 @@
           </div>
           <div class="product-information__item">
             <span class="product-information__name">Serving Size</span>
-            <span>1 Capsule (30PCS per bottle)</span>
+            <span id="variant-serving-size">1 Capsule (05g per bottle)</span>
           </div>
         </div>
       </div>
@@ -984,9 +984,77 @@
     </div>
   </div>
   <script src="assets/js/footer-popups.js"></script>
+  <style>
+    .variant-thumb {
+      position: relative;
+      cursor: pointer;
+    }
+    .variant-tag {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: #47b32d;
+      color: white;
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: bold;
+      z-index: 10;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const variantData = {
+        '05g': {
+          price: '$105.00',
+          title: 'CBD Hemp Capsule Purified 120mg 05g',
+          category: 'Full-Spectrum / 05g',
+          description: 'Unlock the pure essence of wellness with our CBD Hemp Capsule Purified 120mg. Meticulously processed to provide a high-potency, full-spectrum experience, these 05g capsules are designed for those seeking a convenient and precise way to incorporate premium CBD into their daily routine. Each capsule contains a balanced blend of cannabinoids and hemp-derived compounds to support your overall health and balance. Perfect for on-the-go support, our purified capsules ensure you get the same high quality with every serving. Experience the PANCANN difference with our most potent capsule formula yet.',
+          serving: '1 Capsule (05g per bottle)'
+        },
+        '10g': {
+          price: '$200.00',
+          title: 'CBD Hemp Capsule Purified 120mg 10g',
+          category: 'Full-Spectrum / 10g',
+          description: 'Elevate your daily wellness with our CBD Hemp Capsule Purified 120mg in the 10g format. Each capsule contains a balanced blend of cannabinoids and hemp-derived compounds to support your overall health and balance. Perfect for on-the-go support, our purified capsules ensure you get the same high quality with every serving.',
+          serving: '1 Capsule (10g per bottle)'
+        },
+        '20g': {
+          price: '$390.00',
+          title: 'CBD Hemp Capsule Purified 120mg 20g',
+          category: 'Full-Spectrum / 20g',
+          description: 'Our 20g Purified Hemp Capsules offer the ultimate convenience for long-term wellness management. High-potency, full-spectrum capsules designed for precise daily support, rigorously lab tested to ensure the pure essence of wellness in every serving. The PANCANN difference in a value-packed 20g size.',
+          serving: '1 Capsule (20g per bottle)'
+        }
+      };
+
+      const thumbs = document.querySelectorAll('.variant-thumb');
+      const breadTitle = document.getElementById('variant-bread-title');
+      const breadItem = document.getElementById('variant-bread-item');
+      const productTitle = document.getElementById('variant-product-title');
+      const productCategory = document.getElementById('variant-product-category');
+      const productPrice = document.getElementById('variant-product-price');
+      const productDesc = document.getElementById('variant-product-description');
+      const servingSize = document.getElementById('variant-serving-size');
+
+      thumbs.forEach(thumb => {
+        thumb.addEventListener('click', function() {
+          const variant = this.getAttribute('data-variant');
+          const data = variantData[variant];
+
+          if (data) {
+            if (breadTitle) breadTitle.innerText = data.title;
+            if (breadItem) breadItem.innerText = data.title;
+            if (productTitle) productTitle.innerText = data.title;
+            if (productCategory) productCategory.innerText = data.category;
+            if (productPrice) productPrice.innerText = data.price;
+            if (productDesc) productDesc.innerText = data.description;
+            if (servingSize) servingSize.innerText = data.serving;
+          }
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
-
-
-
